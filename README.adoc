@@ -1,15 +1,9 @@
 = Void Wizard
-:library: Asciidoctor
-:idprefix:
 //:numbered:
-:imagesdir: images
-:experimental:
-:toc: macro
-:toc-placement!:
-//:toc-title: pass:[<h3>Table of Contents</h3>]
-//:max-width: 800px
-//:doctype: book
 //:sectids!:
+:toc:
+:toc-placement!:
+:toc-title: pass:[<h3>Table of Contents</h3>]
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -18,10 +12,10 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-toc::[]
-
 A set of scripts that automate the installation and setup process of Void Linux
 with LVM on LUKS full disk encryption.
+
+toc::[]
 
 == Introduction
 

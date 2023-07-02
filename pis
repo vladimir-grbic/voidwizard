@@ -1,0 +1,122 @@
+#!/bin/sh
+
+# PIS - Package Install Script
+
+########################
+# Function Definitions #
+########################
+
+install_packages () {
+	# Expects one argument, a CSV file that contains list of packages to be
+	# installed.
+
+	packages=$1
+
+	if [ -z packages ]; then
+		echo "No packages provided."
+		echo "Exiting..."
+		exit 1
+	fi
+
+	# Loop through the package list, installing each with an appropriate method.
+	# NOTE: The IFS (Internal Field Separator) is an environment variable.
+	while IFS="," read -r origin installation_stage package_name clone_url description
+	do
+		# Check if the mandatory fields are set.
+		if [ -z "${origin}" ] || [ -z "${installation_stage}" ] || [ -z "${package_name}" ]; then
+			echo "One of the mandatory fileds in ${file} was found empty."
+			echo "Please, use the proper format! Operation failed."
+			exit 1
+		fi
+
+		echo "Now installing:${package_name}"
+
+		# Determine which command to use to install the package based on its origin.
+		case ${origin} in
+			M)
+				install_command="xbps-install -y"
+				;;
+			S)
+				echo "Installig packages from the XBPS source packages collection is currently not supported by PIS." | sed "s/^/\t/g"
+				echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+				continue
+				;;
+			G)
+				if [ -z ${clone_url} ]; then
+					echo "A Clone URL filed is missing for the Git package: ${package_name}" | sed "s/^/\t/g"
+					echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+					continue
+				fi
+
+				echo "Installig packages from Git is currently not supported by PIS." | sed "s/^/\t/g"
+				echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+				continue
+				;;
+			*)
+				echo "The origin field is set to an invalid value." | sed "s/^/\t/g"
+				echo "Please, use only the allowed origin values:" | sed "s/^/\t/g"
+				echo " - M = The main Void Linux repository" | sed "s/^/\t/g"
+				echo " - S = The XBPS source packages collection" | sed "s/^/\t/g"
+				echo " - G = Git server" | sed "s/^/\t/g"
+				echo " -> Package not installed: ${package_name}"
+				continue
+				;;
+		esac
+
+		# Install the package.
+		${install_command} ${package_name} | sed "s/^/\t/g"
+	done < "${packages}"
+}
+
+###################
+# Main procedures #
+###################
+
+# Record the CSV file containing packages to be installed.
+file=$1
+
+# Record whether a particular installation stage was specified. If so, shell
+# will only install packages associated with that installation stage.
+stage=$2
+
+# Exit if the input file is not fount.
+if [ ! -f "${file}" ]; then
+	echo "File not found: "${file}""
+	exit 1
+fi
+
+# Set traps to clean up the temp file and directory.
+trap 'rm -rf "${temp_file}" "${temp_dir}"' EXIT
+
+# Create a temp file to operate on that contais packages to be installed.
+temp_file=$(mktemp)
+
+# Create a temp directory to be used during the process of installing packages
+# from git (if applicable).
+temp_dir=$(mktemp -d)
+
+# Copy the packages to be installed to the temp_file (all of them or only the
+# ones pretaining to a particular stage if it was specified.)
+if [ -z "${stage}" ]; then
+	# Copy every line from the CSV file that does not start with '#' to the
+	# temp file.
+	sed '/^#/d' "${file}" | sort -k3,3 > "${temp_file}"
+	install_message="Installing all packages..."
+else
+	# If stage is not valid exit the program.
+	if [ ${stage} -ne 0 ] && [ ${stage} -ne 1 ] && [ ${stage} -ne 2 ]; then
+		echo "The 'Installation Stage' argument passed to PIS is invalid."
+		echo "Accepted values are: 0, 1 or 2."
+		echo "Operation failed."
+		exit 1
+	fi
+
+	# Copy the lines from the CSV file that do not start with '#' and have
+	# the specified installation stage value.
+	awk -v stage="${stage}" '$1 ~ /^#/ {next} int($2) == stage {print}' "${file}" | sort -k3,3 > "${temp_file}"
+	install_message="Installing Stage "${stage}" packages..."
+fi
+
+# Install the packages.
+printf "%s\n\n" "${install_message}"
+install_packages "${temp_file}"

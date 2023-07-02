@@ -1,0 +1,124 @@
+#!/bin/sh
+
+# Void Linux Setup Script
+
+# STEPS:
+# 1. Login to the session with your username.
+# 2. Navigate to the directory that contains this script.
+# 3. Do not remove any files from that directory.
+# 4. Edit 'packages.csv' file to include the packages you want to install.
+# 5. Make this script executable.
+# 6. Become the superuser using 'su -' (or use sudo/doas).
+# 7. Run this script from the directory you found it in.
+
+# Make PIS script executable.
+chmod +x pis
+
+# Set username to the user that logged into the current session (refered to as
+# "the user").
+user_name=$(logname)
+
+# Add the user to the wheel, audio and video groups.
+usermod -a -G wheel,audio,video ${user_name}
+
+# Set the path for RUNTIME_DIR_PARENT directory.
+runtime_dir_parent=/run/user
+
+# Make sure that RUNTIME_DIR_PARENT directory (/run/user by default) exists and
+# is only writable by root. This is necessary as it is there, that the package
+# dumb_runtime_dir will create an XDG_RUNTIME_DIR directory on login per the
+# freedesktop.org base directory spec and export the environmental variable. All
+# compositors using Wayland will require an XDG_RUNTIME_DIR to be defined.
+mkdir -p ${runtime_dir_parent}
+chown root:root ${runtime_dir_parent}
+chmod 755 ${runtime_dir_parent}
+
+# Create directories based on XDG user directory configuration and set the user
+# as the owner of the same.
+mkdir "/home/${user_name}/desktop"
+mkdir "/home/${user_name}/downloads"
+mkdir "/home/${user_name}/templates"
+mkdir "/home/${user_name}/public"
+mkdir "/home/${user_name}/documents"
+mkdir "/home/${user_name}/music"
+mkdir "/home/${user_name}/pictures"
+mkdir "/home/${user_name}/videos"
+chown ${user_name}:${user_name} "/home/${user_name}/desktop"
+chown ${user_name}:${user_name} "/home/${user_name}/downloads"
+chown ${user_name}:${user_name} "/home/${user_name}/templates"
+chown ${user_name}:${user_name} "/home/${user_name}/public"
+chown ${user_name}:${user_name} "/home/${user_name}/documents"
+chown ${user_name}:${user_name} "/home/${user_name}/music"
+chown ${user_name}:${user_name} "/home/${user_name}/pictures"
+chown ${user_name}:${user_name} "/home/${user_name}/videos"
+
+# Update the package repositories.
+xbps-install -Su
+
+# Enable (install) the nonfree repository.
+xbps-install void-repo-nonfree
+
+# Run the PIS to install the packages.
+./pis packages.csv
+
+# Regenerate initramfs after installing the microcode package (assumption is
+# that it was specified in packages.csv and installed by PIS). For subsequent
+# updates, the microcode will be added to the initramfs automatically.
+kernel_number=$(uname -r  | grep -Po '^[0-9]+.[0-9]+')
+xbps-reconfigure -f linux${kernel_number}
+
+# Add the user to the _seatd group, after seatd is installed. It allows non-root
+# users to access the seatd session. Execute only after the seatd package has
+# been installed.
+usermod -a -G _seatd ${user_name}
+
+# Enable and start important services.
+ln -s /etc/sv/dhcpcd /var/service
+ln -s /etc/sv/wpa_supplicant /var/service
+ln -s /etc/sv/dbus /var/service
+ln -s /etc/sv/seatd /var/service
+sv up dhcpcd
+sv up wpa_supplicant
+sv up dbus
+sv up seatd
+
+#  Distribute the systemwide config files.
+
+##  Copy doas config file.
+cp -f systemwide_config_files/etc/doas.conf /etc/
+chown root:root /etc/doas.conf
+chmod 0400 /etc/doas.conf
+
+## Copy the custom keymaps file.
+mkdir -p /usr/local/share/kbd/keymaps
+cp -f systemwide_config_files/usr/local/share/kbd/keymaps/caps_swapescape.map /usr/local/share/kbd/keymaps/
+
+## Copy rc.conf.
+cp -f systemwide_config_files/etc/rc.conf /etc/
+
+## Link pipewire and wireplumber config files (from provided examples).
+mkdir -p /etc/pipewire/pipewire.conf.d
+mkdir -p /etc/alsa/conf.d
+ln -s /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+ln -s /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d/
+ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
+
+# !!! Use chezmoi to apply dotfiles.
+
+# Change the theme of apps using GTK and QT toolkit to dark.
+
+## Gnome
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+## QT
+
+# Install vim-plug.
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Create symbolic links for template files.
+ln -s /home/${user_name}/templates/latex/article.tex /home/${user_name}/.local/share/nvim/plugged/vim-latex/ftplugin/latex-suite/templates
+ln -s /home/${user_name}/templates/latex/letter.tex /home/${user_name}/.local/share/nvim/plugged/vim-latex/ftplugin/latex-suite/templates
+
+# Reboot the system (required at the end of the script).
+# reboot

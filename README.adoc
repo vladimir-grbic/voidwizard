@@ -60,7 +60,7 @@ reference the code to understand the full implications.
 
 Before we dive in more detail, keep in mind that you are encouraged to
 replace some of the tools/packages I use, but keep in mind that you might have
-to modify some instructions in `+vlss` or even `+vlis+`. For example, if you
+to modify some instructions in `+vlss+` or even `+vlis+`. For example, if you
 want to install and use qutebrowser instead of Firefox that will just require
 you accurately update `+packages.csv+`, while if you want to use `PulseAudio`
 instead of `PipeWire` you will certainly have to modify `+vlss+` as well.

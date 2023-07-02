@@ -1,16 +1,12 @@
 = Void Wizard
-:toc:
-:description: A set of scripts that automate the \
-	installation and setup process of Void Linux \
-	with LVM on LUKS full disk encryption.
 :library: Asciidoctor
 :idprefix:
 //:numbered:
 :imagesdir: images
 :experimental:
-//:toc: macro
-:toc: preamble
-:toc-title: pass:[<h3>Table of Contents</h3>]
+:toc: macro
+:toc-placement!:
+//:toc-title: pass:[<h3>Table of Contents</h3>]
 //:max-width: 800px
 //:doctype: book
 //:sectids!:
@@ -21,6 +17,11 @@ ifdef::env-github[]
 :caution-caption: :fire:
 :warning-caption: :warning:
 endif::[]
+
+toc::[]
+
+A set of scripts that automate the installation and setup process of Void Linux
+with LVM on LUKS full disk encryption.
 
 == Introduction
 
@@ -54,11 +55,14 @@ calls `+vlss+` to finish the job.
 Recognize that any of these scripts can be used separately to perform their
 well-defined tasks with little to no modification.
 
-NOTE: While these scripts will automate most if not all of the installation, you
+[NOTE]
+====
+While these scripts will automate most if not all of the installation, you
 are still responsible and expected to account for a few important parameters
 such as a different microcode package (if you do not have Intel's CPU) or
 configuration of `+doas+` file. Please, read this document in it's entirety and
 reference the code to understand the full implications.
+====
 
 Before we dive in more detail, keep in mind that you are encouraged to
 replace some of the tools/packages I use, but keep in mind that you might have

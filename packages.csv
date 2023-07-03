@@ -74,6 +74,7 @@ M, 2, tldr, , Command line client for tldr - a collection of simplified and comm
 M, 2, tmux, , A terminal multiplexer (enables a number of terminals - each running a separate process - to be created accessed and controlled from a single screen).
 M, 1, tofi, , Tiny dynamic menu for Wayland.
 M, 2, transmission, , Fast easy and free BitTorrent client (CLI tools daemon and web client).
+M, 2, tree, , Recursive directory listing program.
 M, 1, ufw, , Uncomplicated and easy to use CLI tool for managing a netfilter firewall.
 M, 1, unzip, , A tool for extracting and viewing files in .zip archives.
 M, 2, valgrind, , Tool to help find memory-management problems in programs.

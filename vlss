@@ -64,7 +64,7 @@ xbps-install void-repo-nonfree
 # Regenerate initramfs after installing the microcode package (assumption is
 # that it was specified in packages.csv and installed by PIS). For subsequent
 # updates, the microcode will be added to the initramfs automatically.
-kernel_number=$(uname -r  | grep -Po '^[0-9]+.[0-9]+')
+kernel_number=$(uname -r | grep -Po '^[0-9]+.[0-9]+')
 xbps-reconfigure -f linux${kernel_number}
 
 # Add the user to the _seatd group, after seatd is installed. It allows non-root

@@ -9,6 +9,7 @@ M, 2, bat, , A cat clone with syntax highlighting and Git integration.
 M, 2, bc, , Arbitrary precision numeric processing language.
 M, 2, biber, , BibTeX replacement for users of biblatex with full Unicode support.
 M, 2, brightnessctl, , Lightweight brightness control tool.
+M, 2, checkbashisms, , Debian script that checks for bashisms.
 M, 1, chezmoi, , A program that helps you mange your dotfiles across multiple machines.
 M, 2, chromium, , Google web browser based on WebKit.
 M, 2, clang, , C language family frontend for LLVM.

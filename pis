@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# PIS - Package Install Script
+# Package Install Script
 
 ########################
 # Function Definitions #
@@ -12,7 +12,7 @@ install_packages () {
 
 	packages=$1
 
-	if [ -z packages ]; then
+	if [ -z "${packages}" ]; then
 		echo "No packages provided."
 		echo "Exiting..."
 		exit 1
@@ -24,41 +24,42 @@ install_packages () {
 	do
 		# Check if the mandatory fields are set.
 		if [ -z "${origin}" ] || [ -z "${installation_stage}" ] || [ -z "${package_name}" ]; then
-			echo "One of the mandatory fileds in ${file} was found empty."
+			echo "One of the mandatory fields in '"${file}"' was found empty."
 			echo "Please, use the proper format! Operation failed."
 			exit 1
 		fi
 
-		echo "Now installing:${package_name}"
+		echo "Now installing:"${package_name}""
 
 		# Determine which command to use to install the package based on its origin.
-		case ${origin} in
+		case "${origin}" in
 			M)
 				install_command="xbps-install -y"
 				;;
 			S)
-				echo "Installig packages from the XBPS source packages collection is currently not supported by PIS." | sed "s/^/\t/g"
-				echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+				printf "\tInstallig packages from the XBPS source packages collection is currently not supported by pis.\n"
+				printf "\tPackage not installed:${package_name}\n"
 				continue
 				;;
 			G)
-				if [ -z ${clone_url} ]; then
-					echo "A Clone URL filed is missing for the Git package: ${package_name}" | sed "s/^/\t/g"
-					echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+				# If clone_url does NOT contain any non-whitespace characters.
+				if [ -z $(echo "${clone_url}" | grep "^\(.*\S.*\)$") ]; then
+					printf "\tThe Clone URL field is missing.\n"
+					printf "\tPackage not installed:${package_name}\n"
 					continue
 				fi
 
-				echo "Installig packages from Git is currently not supported by PIS." | sed "s/^/\t/g"
-				echo " -> Package not installed: ${package_name}" | sed "s/^/\t/g"
+				printf "\tInstallig packages from Git is currently not supported by pis.\n"
+				printf "\tPackage not installed:${package_name}\n"
 				continue
 				;;
 			*)
-				echo "The origin field is set to an invalid value." | sed "s/^/\t/g"
-				echo "Please, use only the allowed origin values:" | sed "s/^/\t/g"
-				echo " - M = The main Void Linux repository" | sed "s/^/\t/g"
-				echo " - S = The XBPS source packages collection" | sed "s/^/\t/g"
-				echo " - G = Git server" | sed "s/^/\t/g"
-				echo " -> Package not installed: ${package_name}"
+				printf "\tThe origin field is set to an invalid value.\n"
+				printf "\tPlease, use only the allowed origin values:\n"
+				printf "\t - M = The main Void Linux repository\n"
+				printf "\t - S = The XBPS source packages collection\n"
+				printf "\t - G = Git server\n"
+				printf "\tPackage not installed:${package_name}\n"
 				continue
 				;;
 		esac
@@ -96,16 +97,16 @@ temp_file=$(mktemp)
 temp_dir=$(mktemp -d)
 
 # Copy the packages to be installed to the temp_file (all of them or only the
-# ones pretaining to a particular stage if it was specified.)
+# ones pretaining to a particular stage, if it was specified.)
 if [ -z "${stage}" ]; then
 	# Copy every line from the CSV file that does not start with '#' to the
 	# temp file.
 	sed '/^#/d' "${file}" | sort -k3,3 > "${temp_file}"
 	install_message="Installing all packages..."
 else
-	# If stage is not valid exit the program.
+	# If the stage is not valid exit the program.
 	if [ ${stage} -ne 0 ] && [ ${stage} -ne 1 ] && [ ${stage} -ne 2 ]; then
-		echo "The 'Installation Stage' argument passed to PIS is invalid."
+		echo "The 'Installation Stage' argument passed to pis is invalid."
 		echo "Accepted values are: 0, 1 or 2."
 		echo "Operation failed."
 		exit 1

@@ -1,9 +1,13 @@
 = Void Wizard
-//:numbered:
-//:sectids!:
+:description: A set of scripts that automate the installation and setup \
+	process of Void Linux with LVM on LUKS full disk encryption.
+:sectanchors:
+:url-repo: https://github.com/vladimir-grbic/voidwizard
 :toc:
+:toc-title: pass:[<h3>Table of Contents</h3>]
+:toclevels: 3
 :toc-placement!:
-:toc-title: pass:[<h2>Table of Contents</h2>]
+//:sectnums:
 ifdef::env-github[]
 :tip-caption: :bulb:
 :note-caption: :information_source:
@@ -22,31 +26,33 @@ toc::[]
 Void Wizard is a set of scripts that automate the installation and setup process
 of Void Linux with LVM on LUKS full disk encryption. The goal is to get you from
 an installation medium to a fully working system using
-https://github.com/riverwm/river[river] -- a dynamic Wayland compositor -- along
-with all your favorite programs.
+https://github.com/riverwm/river[river^] -- a dynamic Wayland compositor --
+along with all your favorite programs.
 
-This document will explain the inner workings of everything in great detail, but
-here is the short overview below.
+This document will explain (in great) the inner workings of everything, but here
+is the short overview.
 
-* `+systemwide_config_files/+` -- The name says it all. The structure of this
-directory mimics the `+/+` (root) directory. Those files will be placed
-correctly by `+vlss+`.
-* `+packages.csv+` -- A list of the necessary packages. It follows a specific
+* `systemwide_config_files/` -- The name says it all. The structure of this
+directory mimics the one of the `/` (root) directory. Those files will be placed
+correctly by `vlss`.
+* `packages.csv` -- A list of the necessary packages. It follows a specific
 format as it accommodates for packages to be installed from different sources
 and at different stages.
-* `+pis+` -- _Package Install Script_ takes as an input `+packages.csv+` and
-(optionally) installation stage and installs either all packages from the file
-or only the ones pertaining to a particular installation stage.
-* `+vlss+` -- _Void Linux Setup Script_ calls `+pis+` to install the required
-packages and configures various aspects of the system to get it up and running
-for you. It also applies my https://github.com/vladimir-grbic/dotfiles[dotfiles]
-using https://www.chezmoi.io/[chezmoi].
-* `+vlis+` (work in progress) -- _Void Linux Install Script_ installs the base
+* `pis` -- _Package Install Script_ takes as an input `packages.csv` and
+(optionally) the installation stage. Then it installs either all packages from
+the file or only the ones pertaining to a particular installation stage (if it
+was specified).
+* `vlss` -- _Void Linux Setup Script_ calls `pis` to install the required
+packages and configures the various aspects of the system to get the environment
+up and running for you. It also applies my
+https://github.com/vladimir-grbic/dotfiles[dotfiles^] using
+https://www.chezmoi.io/[chezmoi^].
+* `vlis` (work in progress) -- _Void Linux Install Script_ installs the base
 system with full disk encryption by mainly performing
-https://docs.voidlinux.org/installation/guides/fde.html[these steps]. Then, it
-calls `+vlss+` to finish the job.
+https://docs.voidlinux.org/installation/guides/fde.html[these steps^]. Then, it
+calls `vlss` to finish the setup.
 
-Recognize that any of these scripts can be used separately to perform their
+Recognize that any of these scripts could be used separately to perform their
 well-defined tasks with little to no modification.
 
 [NOTE]
@@ -54,27 +60,37 @@ well-defined tasks with little to no modification.
 While these scripts will automate most if not all of the installation, you
 are still responsible and expected to account for a few important parameters
 such as a different microcode package (if you do not have Intel's CPU) or
-configuration of `+doas+` file. Please, read this document in it's entirety and
-reference the code to understand the full implications.
+configuration of `doas.conf` file. Please, read this document in it's entirety
+and reference the code to understand the full implications.
 ====
 
 Before we dive in more detail, keep in mind that you are encouraged to
-replace some of the tools/packages I use, but keep in mind that you might have
-to modify some instructions in `+vlss+` or even `+vlis+`. For example, if you
-want to install and use qutebrowser instead of Firefox that will just require
-you accurately update `+packages.csv+`, while if you want to use `PulseAudio`
-instead of `PipeWire` you will certainly have to modify `+vlss+` as well.
+replace some of the tools/packages I use. However, keep in mind that you might
+have to modify some instructions in `vlss` or even `vlis`. For example, if you
+want to install and use qutebrowser instead of Firefox, that will just require
+you accurately update `packages.csv`, while if you want to use `PulseAudio`
+instead of `PipeWire`, you will certainly have to modify `vlss` as well.
 
-Don't be discouraged to change things to your needs especially since I tried to
+Don't be discouraged to modify things to your needs, especially since I tried to
 be extremely verbose and comment the doings of each logical segment in the
 scripts.
 
 == Systemwide Configuration Files
 
+_Work in progress..._
+
 == The List of Packages
+
+_Work in progress..._
 
 == Package Install Script
 
+_Work in progress..._
+
 == Void Linux Setup Script
 
+_Work in progress..._
+
 == Void Linux Install Script
+
+_Work in progress..._

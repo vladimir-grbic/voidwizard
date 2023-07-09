@@ -72,7 +72,6 @@ M, 2, termdown, , Countdown timer and stopwatch in your terminal.
 M, 1, terminus-font, , Monospace bitmap font (for X11 and console).
 M, 2, texlive-full, , A group that all of TeX Live packages.
 M, 2, tldr, , Command line client for tldr - a collection of simplified and community-driven man pages.
-M, 2, tmux, , A terminal multiplexer (enables a number of terminals - each running a separate process - to be created accessed and controlled from a single screen).
 M, 1, tofi, , Tiny dynamic menu for Wayland.
 M, 2, transmission, , Fast easy and free BitTorrent client (CLI tools daemon and web client).
 M, 2, tree, , Recursive directory listing program.
@@ -101,4 +100,5 @@ M, 2, zathura-cb, , Zathura's plugin to open comic book files.
 M, 2, zathura-djvu, , Zathura's plugin to open DJVU files.
 M, 2, zathura-pdf-mupdf, , Zathura's plugin to open PDF files.
 M, 2, zathura-ps, , Zathura's plugin to open PostScript files.
+M, 2, zellij, , Terminal workspace with batteries included.
 M, 2, zip, , A file compression and packaging utility.

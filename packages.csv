@@ -38,6 +38,7 @@ M, 2, intel-video-accel, , Intel Video Acceleration meta-pkg.
 M, 2, kolourpaint, , Simple paint program.
 M, 2, libreoffice, , Full integrated office productivity suite.
 M, 0, lvm2, , Logical Volume Manager 2 utilities.
+M, 1, make, , GNU Make build tool.
 M, 2, mako, , Lightweight Wayland notification daemon.
 M, 1, mesa-dri, , OpenGL hardware acceleration drivers for DRI2+.
 M, 2, moc, , Console audio player designed to be powerful and easy to use.

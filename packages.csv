@@ -95,6 +95,7 @@ M, 1, xdg-desktop-portal-wlr, , A backend implementation for xdg-desktop-portal 
 M, 1, xdg-user-dirs, , A tool to help manage well-known user directories.
 M, 1, xdg-utils, , A set of tools that allows applications to easily integrate with the desktop environment of the user.
 M, 2, xournalpp, , A handwriting note-taking software with PDF annotation support.
+M, 2, xz, , XZ compression utilities.
 M, 2, yt-dlp, , A command-line program to download videos from online video platforms.
 M, 2, zathura, , A highly customizable and functional document viewer.
 M, 2, zathura-cb, , Zathura's plugin to open comic book files.

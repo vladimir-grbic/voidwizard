@@ -26,6 +26,7 @@ M, 2, gimp, , GNU Image Manipulation Program.
 M, 1, git, , A distributed version control system that tracks changes in any set of computer files.
 M, 2, gnome-keyring, , A framework for managing passwords and other secrets.
 M, 2, google-fonts-ttf, , Google's Collection of Fonts.
+M, 1, grim, , Screenshot utility for Wayland. Works great with slurp.
 M, 0, grub, , GNU GRand Unified Bootloader - a multiboot bootloader.
 M, 1, gsettings-desktop-schemas, , Collection of GSettings schemas used for theming GTK apps.
 M, 2, htop, , Better top(1) - interactive process viewer.
@@ -62,9 +63,9 @@ M, 2, rsync, , A fast and versatile file copying tool for remote and local files
 M, 2, ruby-asciidoctor, , Ruby implementation of AsciiDoc.
 M, 1, seatd, , Minimal seat management daemon and universal library.
 M, 2, Signal-Desktop, , Cross-platform centralized encrypted messaging service.
+M, 1, slurp, , Tool for selecting a region in a Wayland compositor. Works well with grim (screenshot tool) and wf-recorder (screen recorder).
 M, 2, sqlite, , A library that implements an embeddable SQL database engine.
 M, 2, sqlitebrowser, , SQLite Database browser is a light GUI editor for SQLite databases built on top of Qt.
-M, 1, swappy, , Snapshot editing for Wayland (a la Snappy on macOS).
 M, 1, swaybg, , Wallpaper tool for Wayland compositors.
 M, 1, swayidle, , Idle management daemon for Wayland.
 M, 1, swayimg, , Image viewer for Sway/Wayland.
@@ -84,6 +85,7 @@ M, 1, void-repo-nonfree, , Void Linux drop-in file for the nonfree repository.
 M, 1, Waybar, , Highly customizable Wayland bar for Sway and wlroots-based compositors.
 M, 1, wayland, , Core Wayland window system code and protocol.
 M, 1, waylock, , Small screenlocker for Wayland compositors.
+M, 1, wf-recorder, , Screen recorder for wlroots-based compositors. Works great with slurp.
 M, 2, wireguard-tools, , An extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.
 M, 2, wl-clipboard, , Command-line copy/paste utilities for Wayland.
 M, 1, wlr-randr, , Utility to manage outputs of a Wayland compositor.

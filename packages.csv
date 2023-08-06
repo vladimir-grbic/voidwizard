@@ -41,6 +41,8 @@ M, 2, libreoffice, , Full integrated office productivity suite.
 M, 0, lvm2, , Logical Volume Manager 2 utilities.
 M, 1, make, , GNU Make build tool.
 M, 2, mako, , Lightweight Wayland notification daemon.
+M, 1, man-pages-devel, , Linux Documentation Project (LDP) manual pages - development pages.
+M, 1, man-pages-posix, , Manual pages about POSIX systems.
 M, 1, mesa-dri, , OpenGL hardware acceleration drivers for DRI2+.
 M, 2, moc, , Console audio player designed to be powerful and easy to use.
 M, 2, mpv, , A movie player playing most video formats and DVDs.

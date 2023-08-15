@@ -38,6 +38,7 @@ M, 2, intel-ucode, , Microcode update files for Intel CPUs.
 M, 2, intel-video-accel, , Intel Video Acceleration meta-pkg.
 M, 2, kolourpaint, , Simple paint program.
 M, 2, libreoffice, , Full integrated office productivity suite.
+M, 1, lldb, , Low Level Virtual Machine - LLDB debugger.
 M, 0, lvm2, , Logical Volume Manager 2 utilities.
 M, 1, make, , GNU Make build tool.
 M, 2, mako, , Lightweight Wayland notification daemon.

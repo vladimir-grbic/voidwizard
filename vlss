@@ -112,6 +112,7 @@ ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
 
 # Set the default download directory for the transmission daemon.
 transmission-daemon -w /home/${user_name}/downloads
+transmission-remote -w /home/${user_name}/downloads
 
 # !!! Use chezmoi to apply dotfiles.
 

@@ -20,11 +20,16 @@ M, 1, dbus, , Message bus system for inter-application communication.
 M, 1, dosfstools, , DOS filesystem utilities.
 M, 1, dumb_runtime_dir, , Creates an XDG_RUNTIME_DIR directory on login per the freedesktop.org base directory spec. Flaunts the spec and never removes it even after last logout.
 #M, 1, elogind, , Standalone fork of systemd-logind - a system service that manages user logins (sessions/processes/idle states/power and sleep hardware keys/multi-seat management etc.). Choose either seatd or elogind.
+M, 1, exfat-utils, , Utilities for exFAT file system.
+M, 2, figlet, , Program for making large letters out of ordinary text.
 M, 2, firefox, , A modern web browser.
+M, 2, font-latinmodern, , Improved version of Computer Modern fonts as used in LaTeX.
+M, 2, font-latinmodern-math, , Improved version of Computer Modern math font as used in LaTeX.
 M, 2, fzf, , A command-line fuzzy finder.
 M, 2, gimp, , GNU Image Manipulation Program.
 M, 1, git, , A distributed version control system that tracks changes in any set of computer files.
 M, 2, gnome-keyring, , A framework for managing passwords and other secrets.
+M, 2, go, , Go Programming Language.
 M, 2, google-fonts-ttf, , Google's Collection of Fonts.
 M, 1, grim, , Screenshot utility for Wayland. Works great with slurp.
 M, 0, grub, , GNU GRand Unified Bootloader - a multiboot bootloader.
@@ -45,6 +50,7 @@ M, 2, mako, , Lightweight Wayland notification daemon.
 M, 1, man-pages-devel, , Linux Documentation Project (LDP) manual pages - development pages.
 M, 1, man-pages-posix, , Manual pages about POSIX systems.
 M, 1, mesa-dri, , OpenGL hardware acceleration drivers for DRI2+.
+M, 2, minisign, , Simple tool to sign files and verify signatures.
 M, 2, moc, , Console audio player designed to be powerful and easy to use.
 M, 2, mpv, , A movie player playing most video formats and DVDs.
 M, 1, mtools, , A collection of utilities to access MS-DOS disks.
@@ -62,6 +68,7 @@ M, 1, pipewire, , Low-latency audio/video router and processor.
 M, 1, playerctl, , Media Player Remote Interfacing Specification (MPRIS) command-line controller and library.
 M, 2, python3-pip, , Tool for installing and managing Python packages.
 M, 1, river, , Dynamic tiling Wayland compositor.
+M, 2, rpi-imager, , Raspberry Pi imaging utility.
 M, 2, rsync, , A fast and versatile file copying tool for remote and local files.
 M, 2, ruby-asciidoctor, , Ruby implementation of AsciiDoc.
 M, 1, seatd, , Minimal seat management daemon and universal library.
@@ -76,6 +83,8 @@ M, 2, syncthing, , An open-source file synchronization client/server application
 M, 2, termdown, , Countdown timer and stopwatch in your terminal.
 M, 1, terminus-font, , Monospace bitmap font (for X11 and console).
 M, 2, texlive-full, , A group that all of TeX Live packages.
+M, 2, thunderbird, , Standalone email and news reader.
+M, 2, thunderbird-i18n, , Thunderbird language packs.
 M, 2, tldr, , Command line client for tldr - a collection of simplified and community-driven man pages.
 M, 1, tofi, , Tiny dynamic menu for Wayland.
 M, 2, transmission, , Fast easy and free BitTorrent client (CLI tools daemon and web client).
@@ -93,6 +102,7 @@ M, 2, wireguard-tools, , An extremely simple yet fast and modern VPN that utiliz
 M, 2, wl-clipboard, , Command-line copy/paste utilities for Wayland.
 M, 1, wlr-randr, , Utility to manage outputs of a Wayland compositor.
 M, 1, wlsunset, , Day/night gamma adjustments for Wayland.
+M, 2, WoeUSB-cli, , Tool to create a Windows USB stick installer from a real Windows DVD or image.
 M, 2, words-web2, , Webster's Second International word list (FreeBSD version).
 M, 1, xdg-desktop-portal, , Desktop integration portals for sandboxed apps (required for screen capture).
 M, 1, xdg-desktop-portal-gtk, , A backend implementation for xdg-desktop-portal using GTK.

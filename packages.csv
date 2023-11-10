@@ -16,6 +16,7 @@ M, 2, clang, , C language family frontend for LLVM.
 M, 0, cryptsetup, , Userspace setup tool for transparent encryption of block devices using dm-crypt.
 M, 1, cups, , Common UNIX Printing System.
 M, 1, curl, , Command line tool and library for transferring data with URLs.
+M, 2, darktable, , Virtual lighttable and darkroom for photographers.
 M, 1, dbus, , Message bus system for inter-application communication.
 M, 1, dosfstools, , DOS filesystem utilities.
 M, 1, dumb_runtime_dir, , Creates an XDG_RUNTIME_DIR directory on login per the freedesktop.org base directory spec. Flaunts the spec and never removes it even after last logout.

@@ -73,6 +73,7 @@ M, 1, river, , Dynamic tiling Wayland compositor.
 M, 2, rpi-imager, , Raspberry Pi imaging utility.
 M, 2, rsync, , A fast and versatile file copying tool for remote and local files.
 M, 2, ruby-asciidoctor, , Ruby implementation of AsciiDoc.
+M, 2, rustup, , Rust toolchain installer.
 M, 1, seatd, , Minimal seat management daemon and universal library.
 M, 2, Signal-Desktop, , Cross-platform centralized encrypted messaging service.
 M, 1, slurp, , Tool for selecting a region in a Wayland compositor. Works well with grim (screenshot tool) and wf-recorder (screen recorder).

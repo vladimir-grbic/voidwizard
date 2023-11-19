@@ -123,7 +123,7 @@ gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ## QT
 
 # Install rust.
-rustup-init -v -y
+rustup-init -v -y --no-modify-path
 
 # Install vim-plug.
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

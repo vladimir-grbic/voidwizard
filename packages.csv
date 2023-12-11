@@ -12,6 +12,7 @@ M, 2, brightnessctl, , Lightweight brightness control tool.
 M, 2, checkbashisms, , Debian script that checks for bashisms.
 M, 1, chezmoi, , A program that helps you mange your dotfiles across multiple machines.
 M, 2, chromium, , Google web browser based on WebKit.
+M, 1, chrony, , Versatile implementation of the Network Time Protocol (NTP).
 M, 2, clang, , C language family frontend for LLVM.
 M, 0, cryptsetup, , Userspace setup tool for transparent encryption of block devices using dm-crypt.
 M, 1, cups, , Common UNIX Printing System.

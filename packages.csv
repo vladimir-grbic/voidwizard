@@ -70,6 +70,7 @@ M, 2, pfetch, , System information tool written in POSIX sh.
 M, 1, pipewire, , Low-latency audio/video router and processor.
 M, 1, playerctl, , Media Player Remote Interfacing Specification (MPRIS) command-line controller and library.
 M, 2, python3-pip, , Tool for installing and managing Python packages.
+M, 1, qt5-wayland, , Cross-platform application and UI framework (QT5) - Wayland component.
 M, 1, river, , Dynamic tiling Wayland compositor.
 M, 2, rpi-imager, , Raspberry Pi imaging utility.
 M, 2, rsync, , A fast and versatile file copying tool for remote and local files.
@@ -113,6 +114,7 @@ M, 1, xdg-desktop-portal-gtk, , A backend implementation for xdg-desktop-portal 
 M, 1, xdg-desktop-portal-wlr, , A backend implementation for xdg-desktop-portal using wlroots.
 M, 1, xdg-user-dirs, , A tool to help manage well-known user directories.
 M, 1, xdg-utils, , A set of tools that allows applications to easily integrate with the desktop environment of the user.
+M, 1, xorg-server-xwayland, , Nested X server that runs as a wayland client.
 M, 2, libxkbcommon-tools, , Library to handle keyboard descriptions - utilities (eg. xkbcli interactive-wayland).
 M, 2, xournalpp, , A handwriting note-taking software with PDF annotation support.
 M, 2, xz, , XZ compression utilities.

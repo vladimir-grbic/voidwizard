@@ -23,6 +23,7 @@ M, 1, dosfstools, , DOS filesystem utilities.
 M, 1, dumb_runtime_dir, , Creates an XDG_RUNTIME_DIR directory on login per the freedesktop.org base directory spec. Flaunts the spec and never removes it even after last logout.
 #M, 1, elogind, , Standalone fork of systemd-logind - a system service that manages user logins (sessions/processes/idle states/power and sleep hardware keys/multi-seat management etc.). Choose either seatd or elogind.
 M, 1, exfat-utils, , Utilities for exFAT file system.
+M, 1, fd, , Simple fast and user-friendly alternative to find (required for neovim plugins).
 M, 2, figlet, , Program for making large letters out of ordinary text.
 M, 2, firefox, , A modern web browser.
 M, 2, font-latinmodern, , Improved version of Computer Modern fonts as used in LaTeX.
@@ -71,6 +72,7 @@ M, 1, pipewire, , Low-latency audio/video router and processor.
 M, 1, playerctl, , Media Player Remote Interfacing Specification (MPRIS) command-line controller and library.
 M, 2, python3-pip, , Tool for installing and managing Python packages.
 M, 1, qt5-wayland, , Cross-platform application and UI framework (QT5) - Wayland component.
+M, 1, ripgrep, , Fast search tool inspired by ag and grep (required for neovim plugins).
 M, 1, river, , Dynamic tiling Wayland compositor.
 M, 2, rpi-imager, , Raspberry Pi imaging utility.
 M, 2, rsync, , A fast and versatile file copying tool for remote and local files.
@@ -91,6 +93,7 @@ M, 2, texlive-full, , A group that all of TeX Live packages.
 M, 2, thunderbird, , Standalone email and news reader.
 M, 2, thunderbird-i18n, , Thunderbird language packs.
 M, 2, tldr, , Command line client for tldr - a collection of simplified and community-driven man pages.
+M, 2, tmux, , Terminal multiplexer.
 M, 1, tofi, , Tiny dynamic menu for Wayland.
 M, 2, transmission, , Fast easy and free BitTorrent client (CLI tools daemon and web client).
 M, 2, tree, , Recursive directory listing program.
@@ -124,5 +127,4 @@ M, 2, zathura-cb, , Zathura's plugin to open comic book files.
 M, 2, zathura-djvu, , Zathura's plugin to open DJVU files.
 M, 2, zathura-pdf-mupdf, , Zathura's plugin to open PDF files.
 M, 2, zathura-ps, , Zathura's plugin to open PostScript files.
-M, 2, zellij, , Terminal workspace with batteries included.
 M, 2, zip, , A file compression and packaging utility.

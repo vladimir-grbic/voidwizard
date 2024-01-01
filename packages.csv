@@ -105,6 +105,7 @@ M, 1, void-repo-nonfree, , Void Linux drop-in file for the nonfree repository.
 M, 1, Waybar, , Highly customizable Wayland bar for Sway and wlroots-based compositors.
 M, 1, wayland, , Core Wayland window system code and protocol.
 M, 1, waylock, , Small screenlocker for Wayland compositors.
+M, 1, wget, , Network utility to retrieve files from the Web (required for neovim plugins).
 M, 1, wf-recorder, , Screen recorder for wlroots-based compositors. Works great with slurp.
 M, 2, wireguard-tools, , An extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.
 M, 2, wl-clipboard, , Command-line copy/paste utilities for Wayland.

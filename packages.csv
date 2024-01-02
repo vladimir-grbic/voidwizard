@@ -63,6 +63,7 @@ M, 1, neovim, , Fork of Vim aiming to improve user experience plugins and GUIs.
 M, 1, nerd-fonts, , Developer-targeted fonts with a high number of glyphs.
 M, 2, newsboat, , An RSS/Atom feed reader for the text console.
 M, 2, nnn, , A full-featured terminal file manager. It's tiny (nearly 0-config) and incredibly fast.
+M, 1, nodejs, , Evented I/O for V8 javascript (required for neovim LSPs).
 M, 2, nuspell, , Spell checker library and program designed as a modern alternative to hunspell.
 M, 2, obs, , Free and open source software for live streaming and recording.
 M, 1, opendoas, , Portable OpenBSD doas to execute commands as another user.

@@ -131,5 +131,9 @@ rustup-init -v -y --no-modify-path
 #ln -s /home/${user_name}/templates/latex/article.tex /home/${user_name}/.local/share/nvim/plugged/vim-latex/ftplugin/latex-suite/templates
 #ln -s /home/${user_name}/templates/latex/letter.tex /home/${user_name}/.local/share/nvim/plugged/vim-latex/ftplugin/latex-suite/templates
 
+#
+# Update the manpage database.
+makewhatis
+
 # Reboot the system (required at the end of the script).
 # reboot

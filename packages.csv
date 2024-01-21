@@ -72,6 +72,7 @@ M, 2, pfetch, , System information tool written in POSIX sh.
 M, 1, pipewire, , Low-latency audio/video router and processor.
 M, 1, playerctl, , Media Player Remote Interfacing Specification (MPRIS) command-line controller and library.
 M, 2, python3-pip, , Tool for installing and managing Python packages.
+M, 2, python3-virtualenv, , Virtual Python environment builder.
 M, 1, qt5-wayland, , Cross-platform application and UI framework (QT5) - Wayland component.
 M, 1, ripgrep, , Fast search tool inspired by ag and grep (required for neovim plugins).
 M, 1, river, , Dynamic tiling Wayland compositor.

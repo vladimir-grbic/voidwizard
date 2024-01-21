@@ -59,6 +59,7 @@ M, 2, moc, , Console audio player designed to be powerful and easy to use.
 M, 2, mpv, , A movie player playing most video formats and DVDs.
 M, 1, mtools, , A collection of utilities to access MS-DOS disks.
 M, 2, nautilus, , Default file manager for GNOME.
+M, 1, ncdu, , NCurses Disk Usage utility (modern du alternative).
 M, 1, neovim, , Fork of Vim aiming to improve user experience plugins and GUIs.
 M, 1, nerd-fonts, , Developer-targeted fonts with a high number of glyphs.
 M, 2, newsboat, , An RSS/Atom feed reader for the text console.

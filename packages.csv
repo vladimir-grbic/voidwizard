@@ -39,6 +39,7 @@ M, 0, grub, , GNU GRand Unified Bootloader - a multiboot bootloader.
 M, 1, gsettings-desktop-schemas, , Collection of GSettings schemas used for theming GTK apps.
 M, 2, helvum, , GTK patchbay for PipeWire.
 M, 2, htop, , Better top(1) - interactive process viewer.
+M, 2, hugo, , Fast and Modern Static Website Engine.
 M, 2, hunspell-en_US, , English hunspell dictionaries.
 M, 2, hunspell-sr_SR, , Serbian dictionary for hunspell - cyrillic and latin.
 M, 2, ImageMagick, , A minimal image viewing/manipulation program.
